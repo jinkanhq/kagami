@@ -112,6 +112,7 @@ a.btn:hover {
     height: 36px;
     width: 210px;
     color: transparent;
+    font-weight: 400;
     user-select: none;
     background-image: var(--logo-image);
     background-size: 100%;
@@ -440,7 +441,7 @@ footer.bottom p {
     position: relative;
     top: 70px;
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.5em;
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,.1);
@@ -479,6 +480,10 @@ footer.bottom .footer-logo {
 
 .singular .hero-box-content p {
     line-height: 28px;
+}
+
+.singular .hero-box-content img {
+    max-width: 100%;
 }
 
 .singular .hero-box-content code {
