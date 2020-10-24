@@ -21,7 +21,7 @@ if ( have_posts() ) {
         <div class="container">
             <?php get_template_part( 'template-parts/post-cover', null, array('is_hero' => true) ); ?>
             <div class="hero-box-content">
-                <?php echo get_the_content(); ?>
+                <?php the_content(); ?>
                 <?php if ( ! is_page() ) {
                     $author_slug = get_the_author_meta('user_login');
                     $author_display_name = get_the_author_meta('display_name');
