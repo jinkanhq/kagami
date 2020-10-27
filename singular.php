@@ -14,6 +14,7 @@ if ( have_posts() ) {
             $full_thumbnail_url = array($fallback_url);
             $large_thumbnail_url = $full_thumbnail_url;
         }
+        $tags = get_the_tags();
         get_template_part( 'template-parts/hero' );
 ?>
 <div class="fill">
@@ -28,16 +29,18 @@ if ( have_posts() ) {
                     $author_avatar_url = get_avatar_url(get_the_author_meta('user_email'));
                     $author_description = get_the_author_meta('description');
                 ?>
+                <?php if ( $tags ) { ?>
                 <div class="divider">
                     <div class="inner-text"><?php _e('Tags', 'kagami') ?></div>
                 </div>
                 <div class="post-tags">
-                <?php $tags = get_the_tags();
-                foreach ( $tags as $tag ) {
-                    printf('<a class="btn post-tag" href="%1$s">%2$s</a>', get_tag_link($tag->term_id), $tag->name);
-                }
+                <?php
+                    foreach ( $tags as $tag ) {
+                        printf('<a class="btn post-tag" href="%1$s">%2$s</a>', get_tag_link($tag->term_id), $tag->name);
+                    }
                 ?>
                 </div>
+                <?php } ?>
                 <div class="divider">
                     <div class="inner-text"><?php _e('About the author', 'kagami') ?></div>
                 </div>
