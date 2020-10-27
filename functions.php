@@ -128,9 +128,10 @@ add_action('customize_register', 'kagami_customize_register');
 
 add_action( 'wp_enqueue_scripts', 'kagami_scripts' );
 function kagami_scripts() {
-    $variables_version = md5_file( get_theme_file_path( '/assets/css/variables.css.php' ) );
+    $variables_version = md5( filemtime( get_theme_file_path( '/assets/css/variables.css.php' ) ) );
+    $style_version = md5( filemtime( get_theme_file_path( '/assets/css/style.css' ) ) );
     wp_enqueue_style( 'kagami-variables', admin_url( 'admin-ajax.php' ).'?action=dynamic_css', array(), $variables_version );
-    wp_enqueue_style( 'kagami-style', get_theme_file_uri( '/assets/css/style.css' ));
+    wp_enqueue_style( 'kagami-style', get_theme_file_uri( '/assets/css/style.css' ), array(), $style_version );
     wp_enqueue_style( 'font-awesome', 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css' );
 }
 

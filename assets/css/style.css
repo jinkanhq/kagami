@@ -208,10 +208,6 @@ main {
     transition: all .3s cubic-bezier(.645,.045,.355,1);
 }
 
-.hero-box>.container>header:hover {
-    filter: brightness(110%);
-}
-
 .hero-box>.container>header .hero-box-title {
     bottom: 20px;
     position: absolute;
@@ -290,7 +286,7 @@ main {
 .post-cover .post-overlay {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 40%, #000);
+    background: linear-gradient(to bottom, rgba(0,0,0,.2) 20%, rgba(0,0,0,.5) 40%, rgba(0,0,0,.8));
     opacity: .67;
     position: absolute;
     top: 0;
@@ -367,7 +363,7 @@ header.post-cover {
     font-size: 24px;
     font-weight: 500;
     font-family: var(--serif-font-family);
-    text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
 .post-cover .post-author-avatar {
@@ -484,6 +480,7 @@ footer.bottom .footer-logo {
 
 .singular .hero-box-content img {
     max-width: 100%;
+    height: auto;
 }
 
 .singular .hero-box-content code {
@@ -526,6 +523,8 @@ footer.bottom .footer-logo {
 }
 
 .singular .post-author .avatar {
+    width: 96px;
+    height: 96px;
     border-radius: 48px;
 }
 
