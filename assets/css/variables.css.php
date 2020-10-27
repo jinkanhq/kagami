@@ -1,9 +1,9 @@
 <?php 
 header( 'Content-Type: text/css');
-header( 'Etag: ' . md5_file( __FILE__ ) );
-$jsdelivr_used = get_theme_mod('jsdelivr_used', false);
+header( 'Etag: ' . md5( filemtime( __FILE__ ) ) );
+$use_jsdelivr = get_theme_mod('use_jsdelivr', false);
 $jsdelivr_font_base_path = 'https://cdn.jsdelivr.net/gh/jinkanhq/kagami@v' . KAGAMI_VERSION . '/assets/fonts/';
-$font_base_path = $jsdelivr_used ? $jsdelivr_font_base_path : get_template_directory_uri() . '/assets/fonts/';
+$font_base_path = $use_jsdelivr ? $jsdelivr_font_base_path : get_template_directory_uri() . '/assets/fonts/';
 ?>
 
 :root {
